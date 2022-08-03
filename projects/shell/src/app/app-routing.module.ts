@@ -22,6 +22,17 @@ const routes: Routes = [
   },
 
   {
+    path: 'standalone',
+    loadComponent: () =>
+      loadRemoteModule({
+        type: 'module',
+        remoteEntry: 'http://localhost:4200/remoteEntry.js',
+        exposedModule: './Component'
+      })
+      .then(c => c.StandalonePanelComponent)
+  },
+
+  {
     path: '**',
     component: NotFoundComponent
   }

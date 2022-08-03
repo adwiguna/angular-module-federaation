@@ -2,10 +2,11 @@ const { shareAll, withModuleFederationPlugin } = require('@angular-architects/mo
 
 module.exports = withModuleFederationPlugin({
 
-  name: 'mfe',
-  library: { type: "module" },
+  name: 'mfe-standalone',
+
   exposes: {
-    './Module': './projects/mfe/src/app/panel/panel.module.ts',
+    './Component': './projects/mfe-standalone/src/app/standalone-panel/standalone-panel.component.ts',
+    // './Component': './projects/mfe-standalone/src/app/app.component.ts',
   },
 
   shared: {
